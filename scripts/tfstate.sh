@@ -473,7 +473,7 @@ function show {
     rm -f $STDERR_FILE
 
     
-    terraform ${tf_action} -json  | jq '.terraform_version'  
+    terraform ${tf_action} -json ${tf_plan_file}
 
     RETURN_CODE=${PIPESTATUS[0]} && echo "Terraform ${tf_action} return code: ${RETURN_CODE}"
 
