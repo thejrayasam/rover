@@ -473,7 +473,7 @@ function show {
     rm -f $STDERR_FILE
 
     
-    terraform ${tf_action} -json ${tf_plan_file}
+    terraform ${tf_action} -json ${tf_plan_file} > /tmp/${TF_VAR_tf_name}.json
 
     RETURN_CODE=${PIPESTATUS[0]} && echo "Terraform ${tf_action} return code: ${RETURN_CODE}"
 
